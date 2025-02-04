@@ -37,6 +37,7 @@ RUN \
     ${S6_OVERLAY_DOWNLOAD}/s6-overlay-${S6_ARCH}.tar.xz && \
   tar -C / -Jxpf /tmp/s6/s6-overlay-noarch.tar.xz && \
   tar -C / -Jxpf /tmp/s6/s6-overlay-${S6_ARCH}.tar.xz && \
+  rm -rf /tmp/s6 && \
 \
   wget -qO - https://download.jitsi.org/jitsi-key.gpg.key | \
     gpg --dearmour >/usr/share/keyrings/jitsi.gpg && \
@@ -48,7 +49,6 @@ RUN \
     xz-utils \
     && \
   apt-cleanup && \
-  rm -rf /tmp/s6 && \
 \
   adduser --disabled-password --gecos "" joot
 
