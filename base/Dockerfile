@@ -50,7 +50,7 @@ RUN \
     && \
   apt-cleanup && \
 \
-  adduser --disabled-password --gecos "" joot
+  adduser --disabled-password --gecos "" s6
 
 RUN \
   [ "${JITSI_RELEASE}" = "unstable" ] && \
@@ -66,6 +66,6 @@ RUN \
   || \
     true
 
-USER joot
+USER s6
 
 ENTRYPOINT [ "/init" ]
