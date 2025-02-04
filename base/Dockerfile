@@ -8,6 +8,8 @@ ARG TPL_DOWNLOAD=https://github.com/jitsi/tpl/releases/download/${TPL_VERSION}
 
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 
+COPY rootfs /
+
 RUN \
   dpkgArch="$(dpkg --print-architecture)" && \
   case "${dpkgArch##*-}" in \
