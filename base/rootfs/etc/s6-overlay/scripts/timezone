@@ -1,4 +1,0 @@
-#!/command/with-contenv bash
-
-export
-echo 1111 >/tmp/hello
