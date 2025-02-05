@@ -43,7 +43,7 @@ RUN \
 \
   wget -qO - https://download.jitsi.org/jitsi-key.gpg.key | \
     gpg --dearmour >/usr/share/keyrings/jitsi.gpg && \
-  sed -i "s/stable/${JITSI_RELEASE}/" /etc/apt/sources.list.d/jitsi.list && \
+  sed -i "s/stable/${JITSI_RELEASE}/" /etc/apt/sources.list.d/jitsi.sources && \
 \
   apt-dpkg-wrap apt-get update && \
   apt-dpkg-wrap apt-get dist-upgrade -y && \
