@@ -2,10 +2,11 @@ ARG JITSI_REPO=ghcr.io/emrahcom/djm-s6-upgrade
 ARG BASE_TAG=latest
 FROM ${JITSI_REPO}/base:${BASE_TAG}
 
+USER root
+
 COPY rootfs /
 
 RUN \
-  mkdir -p /usr/share/man/man1 && \
   wget -qO - https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | \
     gpg --dearmour >/usr/share/keyrings/nodesource.gpg && \
 \
@@ -16,3 +17,5 @@ RUN \
     openjdk-17-jre-headless \
     && \
   apt-cleanup
+
+USER s6
