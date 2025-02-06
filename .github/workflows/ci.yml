@@ -55,3 +55,10 @@ jobs:
           context: ./base
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/base:latest
+
+      - name: Build and push (base)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./base-java
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.repository }}/base-java:latest
