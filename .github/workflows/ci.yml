@@ -37,6 +37,7 @@ jobs:
       contents: read
       id-token: write
       packages: write
+      attestations: write
 
     steps:
       - name: Checkout
@@ -54,4 +55,5 @@ jobs:
         with:
           context: ./base
           push: true
+          sbom: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/base:latest
