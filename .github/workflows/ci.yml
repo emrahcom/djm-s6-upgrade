@@ -58,5 +58,4 @@ jobs:
         with:
           context: ./base
           push: true
-          sbom: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/base:latest
