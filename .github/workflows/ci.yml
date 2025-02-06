@@ -35,11 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
       id-token: write
+      packages: write
+      attestations: write
 
     steps:
-      - name: Check out code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Login
