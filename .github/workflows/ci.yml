@@ -53,4 +53,4 @@ jobs:
           context: ./base
           push: true
           sbom: true
-          tags: jitsi/base:latest
+          tags: emrahcom/base:latest
