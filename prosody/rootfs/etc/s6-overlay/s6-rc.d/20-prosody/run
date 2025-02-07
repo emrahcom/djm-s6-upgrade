@@ -1,0 +1,4 @@
+!/command/with-contenv bash
+
+touch /tmp/xxx
+sleep 600

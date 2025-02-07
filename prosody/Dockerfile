@@ -53,11 +53,11 @@ RUN \
     lua-ldap \
     lua-luaossl \
     lua-sec \
-    lua-unbound && \
+    lua-unbound \
     prosody \
     sasl2-bin \
     && \
-  apt-dpkg-wrap apt-get install -y \
+  apt-dpkg-wrap apt-get install -y -d \
     jitsi-meet-prosody \
     && \
   dpkg -x /var/cache/apt/archives/jitsi-meet-prosody*.deb /tmp/pkg && \
