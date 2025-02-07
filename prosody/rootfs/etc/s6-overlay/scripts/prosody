@@ -1,0 +1,4 @@
+#!/command/with-contenv bash
+
+export
+exec sleep 120
