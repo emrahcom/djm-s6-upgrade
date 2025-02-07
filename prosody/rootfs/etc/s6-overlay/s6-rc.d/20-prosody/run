@@ -1,4 +1,3 @@
-!/command/with-contenv bash
+#!/command/execlineb -P
 
-touch /tmp/xxx
-sleep 600
+/etc/s6-overlay/scripts/prosody
