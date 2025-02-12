@@ -1,11 +1,14 @@
 #!/command/with-contenv bash
 
-#if [[ ! -f /etc/saslauthd.conf ]] && [[ "$AUTH_TYPE" == "ldap" ]]; then
-#  tpl /defaults/saslauthd.conf > /etc/saslauthd.conf
-#  mkdir -pm777 /var/run/saslauthd
-#  #adduser prosody sasl
-#  echo >> /etc/ldap/ldap.conf "TLS_REQCERT allow"
-#fi
+# Yes, this works as expected. If there is a mounted file to /etc/saslauthd.conf
+# /run/sasl/config/saslauthd.conf uses its content, otherwise it is generated.
+# /etc/saslauthd.conf is a symbolic link to /run/sasl/config/saslauthd.conf
+if [[ ! -f /run/sasl/config/saslauthd.conf ]] && [[ "$AUTH_TYPE" == "ldap" ]]; then
+  mkdir -p /run/sasl/config
+  tpl /defaults/saslauthd.conf > /run/sasl/config/saslauthd.conf
+  mkdir -pm777 /var/run/saslauthd
+  echo >> /etc/ldap/ldap.conf "TLS_REQCERT allow"
+fi
 
 PROSODY_CFG="/run/prosody/config/prosody.cfg.lua"
 
