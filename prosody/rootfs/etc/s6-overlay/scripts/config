@@ -1,8 +1,5 @@
 #!/command/with-contenv bash
 
-# Yes, this works as expected. If there is a mounted file to /etc/saslauthd.conf
-# /run/sasl/config/saslauthd.conf uses its content, otherwise it is generated.
-# /etc/saslauthd.conf is a symbolic link to /run/sasl/config/saslauthd.conf
 if [[ ! -f /run/sasl/config/saslauthd.conf ]] && [[ "$AUTH_TYPE" == "ldap" ]]; then
   mkdir -p /run/sasl/config
   tpl /defaults/saslauthd.conf > /run/sasl/config/saslauthd.conf
