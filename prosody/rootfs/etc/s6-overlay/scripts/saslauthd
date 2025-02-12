@@ -1,7 +1,6 @@
 #!/command/with-contenv bash
 
 if [[ -f /run/sasl/config/saslauthd.conf ]]; then
-  chown s6 /var/run/saslauthd
   exec saslauthd -a ldap -O /run/sasl/config/saslauthd.conf -c -m /var/run/saslauthd -n 5 -d
 else
     # if saslauthd should not be started,
