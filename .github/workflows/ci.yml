@@ -56,9 +56,16 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/base:latest
 
-      - name: Build and push (base)
+      - name: Build and push (base-java)
         uses: docker/build-push-action@v6
         with:
           context: ./base-java
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/base-java:latest
+
+      - name: Build and push (prosody)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./prosody
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.repository }}/prosody:latest
