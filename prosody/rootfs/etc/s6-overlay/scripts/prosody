@@ -1,4 +1,3 @@
 #!/command/with-contenv bash
 
-export
-exec sleep 120
+exec prosody --config /run/prosody/config/prosody.cfg.lua -F
