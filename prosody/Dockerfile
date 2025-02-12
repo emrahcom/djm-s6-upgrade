@@ -87,9 +87,7 @@ RUN \
 \
   adduser s6 prosody && \
   adduser s6 sasl && \
-\
-  ln -s /run/sasl/config/saslauthd.conf /etc/saslauthd.conf && \
-  chown s6:s6 /etc/ldap/ldap.conf
+  chown s6 /etc/ldap/ldap.conf
 
 COPY --from=builder /usr/local/lib/lua/5.4 /usr/local/lib/lua/5.4
 COPY --from=builder /usr/local/share/lua/5.4 /usr/local/share/lua/5.4
