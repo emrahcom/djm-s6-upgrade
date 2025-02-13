@@ -1,7 +1,7 @@
 #!/command/with-contenv bash
 
-if [[ -f /run/sasl/config/saslauthd.conf ]]; then
-  exec saslauthd -a ldap -O /run/sasl/config/saslauthd.conf -c -m /var/run/saslauthd -n 5 -d
+if [[ -f /run/saslauthd.conf ]]; then
+  exec saslauthd -a ldap -O /run/saslauthd.conf -c -m /var/run/saslauthd -n 5 -d
 else
     # if saslauthd should not be started,
     # prevent s6 from restarting this script again and again
