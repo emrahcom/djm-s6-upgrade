@@ -69,3 +69,10 @@ jobs:
           context: ./prosody
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/prosody:latest
+
+      - name: Build and push (jicofo)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./jicofo
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.repository }}/jicofo:latest
