@@ -10,9 +10,10 @@ LABEL org.opencontainers.image.url="https://github.com/jitsi/jicofo"
 LABEL org.opencontainers.image.source="https://github.com/jitsi/docker-jitsi-meet"
 LABEL org.opencontainers.image.documentation="https://jitsi.github.io/handbook/"
 
-RUN apt-dpkg-wrap apt-get update && \
-    apt-dpkg-wrap apt-get install -y jicofo && \
-    apt-cleanup
+RUN \
+  apt-dpkg-wrap apt-get update && \
+  apt-dpkg-wrap apt-get install -y jicofo && \
+  apt-cleanup
 
 COPY rootfs/ /
 
