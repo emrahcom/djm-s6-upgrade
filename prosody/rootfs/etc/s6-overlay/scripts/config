@@ -9,9 +9,10 @@ fi
 
 PROSODY_CFG="/run/prosody/config/prosody.cfg.lua"
 
+cp -r /config /run/prosody/config
+cp -r /defaults/* /run/prosody/config
 mkdir -pm 750 /run/prosody/config/data
 mkdir -pm 750 /run/prosody/config/certs
-cp -r /defaults/* /run/prosody/config
 
 [ -z "$PROSODY_MODE" ] && export PROSODY_MODE="client"
 
