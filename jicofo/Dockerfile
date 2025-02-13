@@ -1,6 +1,6 @@
 ARG JITSI_REPO=ghcr.io/emrahcom/djm-s6-upgrade
 ARG BASE_TAG=latest
-FROM ${JITSI_REPO}/base:${BASE_TAG}
+FROM ${JITSI_REPO}/base-java:${BASE_TAG}
 
 USER root
 
