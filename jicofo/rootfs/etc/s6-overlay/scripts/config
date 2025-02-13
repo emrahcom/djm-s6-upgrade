@@ -16,6 +16,7 @@ fi
 # maintain backward compatibility with older variable
 [ -z "${XMPP_HIDDEN_DOMAIN}" ] && export XMPP_HIDDEN_DOMAIN="$XMPP_RECORDER_DOMAIN"
 
-cp -r /config /run/jicofo/config
+mkdir -p /run/jicofo/config
 tpl /defaults/logging.properties > /run/jicofo/config/logging.properties
 tpl /defaults/jicofo.conf > /run/jicofo/config/jicofo.conf
+cp -r /config/. /run/jicofo/config
