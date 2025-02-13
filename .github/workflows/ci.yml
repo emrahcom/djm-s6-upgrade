@@ -76,3 +76,10 @@ jobs:
           context: ./jicofo
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/jicofo:latest
+
+      - name: Build and push (jvb)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./jvb
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.repository }}/jvb:latest
