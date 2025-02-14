@@ -1,7 +1,8 @@
 #!/command/with-contenv bash
 
 # make our folders
-mkdir -p /run/web/config/nginx/keys
+mkdir -p /run/web/tmp
+mkdir -p /run/web/config/keys
 mkdir -p /run/web/config/nginx/site-confs
 cp -r /config/. /run/web/config
 
