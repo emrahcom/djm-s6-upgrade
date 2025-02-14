@@ -22,10 +22,11 @@ RUN \
     jq \
     nginx-extras \
     socat && \
+  mv /usr/share/jitsi-meet/interface_config.js /defaults && \
+  ln -s /run/web/.well-known /usr/share/jitsi-meet/.well-known && \
+  rm -f /etc/nginx/conf.d/default.conf && \
   rm -rf /var/lib/nginx && \
   ln -s /run/web/tmp /var/lib/nginx && \
-  mv /usr/share/jitsi-meet/interface_config.js /defaults && \
-  rm -f /etc/nginx/conf.d/default.conf && \
   apt-cleanup
 
 EXPOSE 80 443
