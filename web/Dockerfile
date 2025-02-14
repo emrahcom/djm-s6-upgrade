@@ -22,6 +22,8 @@ RUN \
     jq \
     nginx-extras \
     socat && \
+  rm -rf /var/lib/nginx && \
+  ln -s /run/web/tmp /var/lib/nginx && \
   mv /usr/share/jitsi-meet/interface_config.js /defaults && \
   rm -f /etc/nginx/conf.d/default.conf && \
   apt-cleanup
