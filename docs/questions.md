@@ -10,3 +10,7 @@
 - Is it needed to create `/usr/share/man/man1` manually?
 - Is `unzip` needed? If needed, put it into `base`
 - Why `nodejs` in `base-java`? For `sidecar`..?
+
+## web
+
+- jaas-account with /run/web/config/jaas-account-created.txt
