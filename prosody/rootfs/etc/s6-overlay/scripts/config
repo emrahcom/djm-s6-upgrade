@@ -15,6 +15,7 @@ PROSODY_CFG="/run/prosody/config/prosody.cfg.lua"
 
 mkdir -pm 750 /run/prosody/config/data
 mkdir -pm 750 /run/prosody/config/certs
+mkdir -pm 750 /run/prosody/config/conf.d
 cp -r /config/. /run/prosody/config
 
 [ -z "$PROSODY_MODE" ] && export PROSODY_MODE="client"
