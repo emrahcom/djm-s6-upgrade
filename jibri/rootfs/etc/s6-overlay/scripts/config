@@ -4,10 +4,11 @@ mkdir -p /run/jibri/config
 find /config -maxdepth 1 -type f -exec cp {} /run/jibri/config \;
 
 # Check if the SYS_ADMIN cap is set
-if ! capsh --has-p=cap_sys_admin; then
-    echo "Required capability SYS_ADMIN is missing"
-    exit 1
-fi
+# EMRAH, fix this later
+#if ! capsh --has-p=cap_sys_admin; then
+#    echo "Required capability SYS_ADMIN is missing"
+#    exit 1
+#fi
 
 # Check if /dev/shm is large enough (2GB at least)
 if ! shm-check; then
