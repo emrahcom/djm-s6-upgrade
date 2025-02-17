@@ -90,3 +90,10 @@ jobs:
           context: ./web
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/web:latest
+
+      - name: Build and push (jigasi)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./jigasi
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.repository }}/jigasi:latest
