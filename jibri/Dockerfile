@@ -36,8 +36,16 @@ RUN \
     unzip && \
   /usr/bin/install-chrome.sh && \
   apt-cleanup && \
+\
+  adduser s6 audio && \
+  adduser s6 jibri && \
+  adduser s6 jitsi && \
   adduser s6 rtkit && \
-/
+  adduser s6 video && \
+  cp -r /home/jibri/. /home/s6 && \
+  rm -rf /home/jibri && \
+  chown s6:s6 /home/s6 -R && \
+\
   dpkgArch="$(dpkg --print-architecture)" && \
   case "${dpkgArch##*-}" in \
     "amd64") SC_ARCH=x86_64 ;; \
