@@ -14,3 +14,8 @@
 ## web
 
 - jaas-account with /run/web/config/jaas-account-created.txt
+
+## jibri
+
+- /run/jibri/logs instead of /config/logs
+  Is this a problem? tmpfs vs mounted folder
