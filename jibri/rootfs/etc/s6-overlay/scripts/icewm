@@ -1,3 +1,4 @@
 #!/command/with-contenv bash
 
-sleep 200
+DAEMON="/usr/bin/icewm-session"
+exec /bin/bash -c "exec $DAEMON"
