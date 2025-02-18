@@ -1,3 +1,4 @@
 #!/command/with-contenv bash
 
-sleep 200
+DAEMON="/usr/bin/Xorg -nocursor -noreset  +extension RANDR +extension RENDER -logfile /tmp/xorg.log  -config /run/jibri/config/xorg-video-dummy.conf ${DISPLAY}"
+exec /bin/bash -c "exec $DAEMON"
