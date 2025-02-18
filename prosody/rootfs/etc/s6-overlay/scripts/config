@@ -8,7 +8,6 @@ if [[ "$AUTH_TYPE" == "ldap" ]]; then
   fi
 
   mkdir -pm777 /var/run/saslauthd
-  echo >> /etc/ldap/ldap.conf "TLS_REQCERT allow"
 fi
 
 PROSODY_CFG="/run/prosody/config/prosody.cfg.lua"
