@@ -37,6 +37,9 @@ RUN \
   /usr/bin/install-chrome.sh && \
   apt-cleanup && \
 \
+  rm -rf /etc/jitsi/jibri && \
+  ln -s /run/jibri/config /etc/jitsi/jibri && \
+\
   usermod -a -G audio,jibri,jitsi,rtkit,video s6 && \
   cp -r /home/jibri/. /home/s6 && \
   rm -rf /home/jibri && \
