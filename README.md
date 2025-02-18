@@ -48,3 +48,9 @@ docker compose -f docker-compose.yml -f jigasi.yml -f jibri.yml pull
 ```bash
 docker compose -f docker-compose.yml up
 ```
+
+### Stopping
+
+```bash
+docker compose -f docker-compose.yml down --remove-orphans
+```
