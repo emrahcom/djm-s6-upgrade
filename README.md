@@ -10,17 +10,15 @@ Create the locale folders on the host machine:
 
 ```bash
 mkdir -p ~/.jitsi-meet-cfg/prosody/{config,prosody-plugins-custom}
-mkdir -p ~/.jitsi-meet-cfg/{jicofo,jigasi,jvb,transcripts,web}
-chmod 777 ~/.jitsi-meet-cfg/transcripts
+mkdir -p ~/.jitsi-meet-cfg/{jibri,jicofo,jigasi,jvb,web}
 
-mkdir -p ~/.jitsi-meet-cfg/crontabs/web
-chmod 777 ~/.jitsi-meet-cfg/crontabs/web
+mkdir -p ~/.jitsi-meet-cfg/storage/{jibri,transcripts}
+chmod 777 ~/.jitsi-meet-cfg/storage/jibri
+chmod 777 ~/.jitsi-meet-cfg/storage/transcripts
 
-mkdir -p ~/.jitsi-meet-cfg/test/web
-chmod 777 ~/.jitsi-meet-cfg/test/web
-
-mkdir -p ~/.jitsi-meet-cfg/jibri/{logs,recordings}
-chmod 777 ~/.jitsi-meet-cfg/jibri/{logs,recordings}
+mkdir -p ~/.jitsi-meet-cfg/tmp/{web-crontabs,web-load-test}
+chmod 777 ~/.jitsi-meet-cfg/tmp/web-crontabs
+chmod 777 ~/.jitsi-meet-cfg/tmp/web-load-test
 ```
 
 Create and update `.env`:
