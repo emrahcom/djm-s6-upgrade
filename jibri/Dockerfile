@@ -33,8 +33,10 @@ RUN \
     procps \
     pulseaudio \
     rtkit \
-    unzip && \
+    unzip \
+    && \
   /usr/bin/install-chrome.sh && \
+  apt-get purge -y unzip && \
   apt-cleanup && \
 \
   rm -rf /etc/jitsi/jibri && \
