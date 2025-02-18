@@ -97,3 +97,10 @@ jobs:
           context: ./jigasi
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/jigasi:latest
+
+      - name: Build and push (jibri)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./jibri
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.repository }}/jibri:latest
