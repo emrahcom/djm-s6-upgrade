@@ -18,7 +18,8 @@ RUN \
     jitsi-videobridge2 \
     jq \
     iproute2 \
-    libpcap0.8 && \
+    libpcap0.8 \
+    && \
   apt-cleanup
 
 COPY rootfs/ /

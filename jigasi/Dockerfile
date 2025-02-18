@@ -15,7 +15,8 @@ RUN \
   apt-dpkg-wrap apt-get install -y \
     jigasi \
     jitsi-autoscaler-sidecar \
-    jq && \
+    jq \
+    && \
   apt-cleanup
 
 COPY rootfs/ /

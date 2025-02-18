@@ -36,7 +36,9 @@ RUN \
     unzip \
     && \
   /usr/bin/install-chrome.sh && \
-  apt-get purge -y unzip && \
+  apt-get purge -y \
+    unzip \
+    && \
   apt-cleanup && \
 \
   rm -rf /etc/jitsi/jibri && \

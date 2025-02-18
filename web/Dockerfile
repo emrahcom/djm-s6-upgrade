@@ -21,7 +21,8 @@ RUN \
     jitsi-meet-web \
     jq \
     nginx-extras \
-    socat && \
+    socat \
+    && \
   mv /usr/share/jitsi-meet/interface_config.js /defaults && \
   ln -s /run/web/.well-known /usr/share/jitsi-meet/.well-known && \
   rm -f /etc/nginx/conf.d/default.conf && \
