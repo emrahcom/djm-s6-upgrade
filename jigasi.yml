@@ -6,6 +6,7 @@ services:
         read_only: true
         tmpfs:
             - /run:mode=750,uid=1000,gid=1000,exec
+            - /tmp:mode=750,uid=1000,gid=1000,exec
         ports:
             - '${JIGASI_PORT_MIN:-20000}-${JIGASI_PORT_MAX:-20050}:${JIGASI_PORT_MIN:-20000}-${JIGASI_PORT_MAX:-20050}/udp'
         volumes:

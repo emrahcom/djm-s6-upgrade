@@ -6,6 +6,7 @@ services:
         read_only: true
         tmpfs:
             - /run:mode=750,uid=1000,gid=1000,exec
+            - /tmp:mode=750,uid=1000,gid=1000,exec
         ports:
             - '${HTTP_PORT}:80'
             - '${HTTPS_PORT}:443'
@@ -197,6 +198,7 @@ services:
         read_only: true
         tmpfs:
             - /run:mode=750,uid=1000,gid=1000,exec
+            - /tmp:mode=750,uid=1000,gid=1000,exec
         expose:
             - '${XMPP_PORT:-5222}'
             - '${PROSODY_S2S_PORT:-5269}'
@@ -349,6 +351,7 @@ services:
         read_only: true
         tmpfs:
             - /run:mode=750,uid=1000,gid=1000,exec
+            - /tmp:mode=750,uid=1000,gid=1000,exec
         ports:
             - '127.0.0.1:${JICOFO_REST_PORT:-8888}:8888'
         volumes:
@@ -441,6 +444,7 @@ services:
         read_only: true
         tmpfs:
             - /run:mode=750,uid=1000,gid=1000,exec
+            - /tmp:mode=750,uid=1000,gid=1000,exec
         ports:
             - '${JVB_PORT:-10000}:${JVB_PORT:-10000}/udp'
             - '127.0.0.1:${JVB_COLIBRI_PORT:-8080}:8080'
