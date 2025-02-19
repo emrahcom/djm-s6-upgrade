@@ -96,5 +96,8 @@ JIBRI_LOGS_DIR=/storage/logs
 mkdir -p ${JIBRI_LOGS_DIR}
 chown -R s6 ${JIBRI_LOGS_DIR}
 
-# make pulse dir
-mkdir -p /run/pulse
+# make .config and .local dirs
+# these are temporary folders linked to /home/s6/.config and /home/s6/.local
+mkdir -p /run/tmp/s6-local
+mkdir -p /run/tmp/s6-config
+cp -r /home/s6/config/. /run/tmp/s6-config
