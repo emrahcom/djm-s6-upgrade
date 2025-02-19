@@ -1,5 +1,11 @@
 # Questions
 
+## all containers
+
+- readonly container
+- tmpfs volume for /tmp
+- tmpfs volume for /run
+
 ## base
 
 - Is it still needed to overwrite `/etc/localtime` and `/etc/timezone`.
@@ -19,4 +25,4 @@
 
 - /run/jibri/logs instead of /config/logs
   Is this a problem? tmpfs vs mounted folder
-- Looks like `CAPS_SYS_ADMIN` is not needed anymore
+- `CAPS_SYS_ADMIN` or `--no-sandbox"
