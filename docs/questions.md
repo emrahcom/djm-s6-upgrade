@@ -19,3 +19,4 @@
 
 - /run/jibri/logs instead of /config/logs
   Is this a problem? tmpfs vs mounted folder
+- Looks like `CAPS_SYS_ADMIN` is not needed anymore
