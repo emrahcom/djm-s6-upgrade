@@ -33,6 +33,9 @@ Add some additional values into `.env` depending on the environment:
 ```bash
 PUBLIC_URL=https://172.18.18.1:8443
 JVB_ADVERTISE_IPS=172.18.18.1
+
+ENABLE_RECORDING=true
+IGNORE_CERTIFICATE_ERRORS=true
 ```
 
 Pull images:
