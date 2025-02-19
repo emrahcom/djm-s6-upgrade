@@ -2,6 +2,9 @@ services:
     jibri:
         image: ghcr.io/emrahcom/djm-s6-upgrade/jibri:latest
         restart: ${RESTART_POLICY:-unless-stopped}
+        read_only: true
+        tmpfs:
+            - /run:mode=750,uid=1000,gid=1000,exec
         volumes:
             - ${CONFIG}/jibri:/config:Z
             - ${CONFIG}/storage/jibri:/storage:Z
