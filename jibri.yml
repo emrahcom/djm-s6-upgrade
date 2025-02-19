@@ -10,6 +10,7 @@ services:
             - ${CONFIG}/jibri:/config:Z
             - ${CONFIG}/storage/jibri:/storage:Z
         shm_size: '2gb'
+        # allow --no-sandbox as Chrome flag if SYS_ADMIN is not wanted
         cap_add:
             - SYS_ADMIN
         environment:
