@@ -95,3 +95,6 @@ chown -R s6 ${JIBRI_RECORDING_DIR}
 JIBRI_LOGS_DIR=/storage/logs
 mkdir -p ${JIBRI_LOGS_DIR}
 chown -R s6 ${JIBRI_LOGS_DIR}
+
+# make pulse dir
+mkdir -p /run/pulse
