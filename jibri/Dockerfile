@@ -48,6 +48,7 @@ RUN \
   cp -r /home/jibri/. /home/s6 && \
   rm -rf /home/jibri && \
   chown s6:s6 /home/s6 -R && \
+  ln -s /run/pulse /home/s6/.config/pulse && \
 \
   dpkgArch="$(dpkg --print-architecture)" && \
   case "${dpkgArch##*-}" in \
