@@ -1,0 +1,59 @@
+name: base
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+      - ".github/workflows/ci-base.yml"
+      - "base/**"
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - name: Check Node / npm versions
+      run: |
+        node -v
+        npm -v
+    - name: setup tpl
+      run: |
+        dpkgArch="$(dpkg --print-architecture)"
+        case "${dpkgArch##*-}" in \
+          "amd64") TPL_ARCH=amd64; S6_ARCH=amd64 ;; \
+          "arm64") TPL_ARCH=arm64; S6_ARCH=aarch64 ;; \
+          *) echo "unsupported architecture"; exit 1 ;; \
+        esac
+        wget -qO /tmp/tpl https://github.com/jitsi/tpl/releases/download/v1.4.0/tpl-linux-${TPL_ARCH}
+        chmod +x /tmp/tpl
+
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push (base)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./base
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.repository }}/base:latest
