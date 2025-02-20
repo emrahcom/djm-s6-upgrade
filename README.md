@@ -36,6 +36,9 @@ JVB_ADVERTISE_IPS=172.18.18.1
 
 ENABLE_RECORDING=true
 IGNORE_CERTIFICATE_ERRORS=true
+
+# To inform s6 about the readonly filesystem
+S6_READ_ONLY_ROOT=1
 ```
 
 Pull images:
