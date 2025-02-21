@@ -40,6 +40,7 @@ ARG VERSION_MATRIX_USER_VERIFICATION_SERVICE_PLUGIN="1.8.0"
 COPY rootfs /
 
 RUN \
+  set -x && \
   wget -qO - https://prosody.im/files/prosody-debian-packages.key | \
     gpg --dearmour >/usr/share/keyrings/prosody.gpg && \
 \
