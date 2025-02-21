@@ -11,8 +11,8 @@ services:
             - ${CONFIG}/storage/jibri:/storage:Z
         shm_size: '2gb'
         # allow --no-sandbox as Chrome flag if SYS_ADMIN is not wanted
-        cap_add:
-            - SYS_ADMIN
+        #cap_add:
+        #    - SYS_ADMIN
         environment:
             - AUTOSCALER_SIDECAR_KEY_FILE
             - AUTOSCALER_SIDECAR_KEY_ID
