@@ -10,6 +10,8 @@ LABEL org.opencontainers.image.url="https://github.com/jitsi/jigasi"
 LABEL org.opencontainers.image.source="https://github.com/jitsi/docker-jitsi-meet"
 LABEL org.opencontainers.image.documentation="https://jitsi.github.io/handbook/"
 
+ENV GOOGLE_APPLICATION_CREDENTIALS /run/jigasi/config/key.json
+
 RUN \
   apt-dpkg-wrap apt-get update && \
   apt-dpkg-wrap apt-get install -y \
