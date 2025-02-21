@@ -6,10 +6,6 @@ mkdir -p /run/web/config/keys
 mkdir -p /run/web/config/nginx/site-confs
 cp -r /config/. /run/web/config
 
-# what are these?
-#    /var/lib/nginx/tmp/client_body \
-#    /var/tmp/nginx
-
 # generate keys (maybe)
 if [[ $DISABLE_HTTPS -ne 1 ]]; then
     if [[ $ENABLE_LETSENCRYPT -eq 1 ]]; then
