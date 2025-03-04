@@ -12,8 +12,9 @@ Create the locale folders on the host machine:
 mkdir -p ~/.jitsi-meet-cfg/prosody/{config,prosody-plugins-custom}
 mkdir -p ~/.jitsi-meet-cfg/{jibri,jicofo,jigasi,jvb,web}
 
-mkdir -p ~/.jitsi-meet-cfg/storage/{jibri,transcripts}
+mkdir -p ~/.jitsi-meet-cfg/storage/{jibri,prosody,transcripts}
 chmod 777 ~/.jitsi-meet-cfg/storage/jibri
+chmod 777 ~/.jitsi-meet-cfg/storage/prosody
 chmod 777 ~/.jitsi-meet-cfg/storage/transcripts
 
 mkdir -p ~/.jitsi-meet-cfg/tmp/{web-crontabs,web-load-test}

@@ -141,3 +141,8 @@ fi
 # certs will be created in /run/prosody/config/data
 mv /run/prosody/config/data/*.{crt,key} /run/prosody/config/certs/ || true
 rm -f /run/prosody/config/data/*.cnf
+
+# copy existing prosody accounts from the old setup if this is the initial run
+if [[ -z $(ls /var/lib/prosody) ]]; then
+    cp -r /run/prosody/config/data/. /var/lib/prosody
+fi
